@@ -1,0 +1,37 @@
+<template lang="pug">
+  div
+    h1 {{event.title}}
+</template>
+<script>
+import EventService from '~/services/EventService.js'
+
+export default {
+  async asyncData({ $axios, error, params }) {
+    try {
+      // const response = await $axios.get(
+      //   'http://localhost:3004/events/' + params.id
+      // )
+      const response = await EventService.getEvent(params.id)
+      return {
+        event: response.data, // this will be merged with the component data, can be accessed from template/ No need to declare data()//
+      }
+    } catch {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch event #' + params.id,
+      })
+    }
+  },
+  head() {
+    return {
+      title: this.event.title,
+    }
+  },
+}
+</script>
+<style scoped>
+h1 {
+  text-align: center;
+  font-size: 2em;
+}
+</style>
