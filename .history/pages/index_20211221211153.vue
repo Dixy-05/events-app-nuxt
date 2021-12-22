@@ -8,8 +8,8 @@ div
 // section(class="section")
 //   div(class="columns is-mobile")
 
-import { mapState } from 'vuex'
 import EventCard from '~/components/eventCard'
+import { mapState } from 'vuex'
 
 export default {
   name: 'IndexPage',
@@ -17,9 +17,12 @@ export default {
     EventCard,
   },
   // asyncData  is called each time before the page component is loaded
-  async fetch({ store, error }) {
+  async fetch({ $axios, error }) {
     try {
-      await store.dispatch('events/fetchEvents')
+      const response = await EventService.getEvents()
+      return {
+        events: response.data, // this will be merged with the component data, can be accessed from template/ No need to declare data()//
+      }
     } catch {
       error({
         statusCode: 503,
@@ -32,7 +35,6 @@ export default {
       title: 'Event Listing',
     }
   },
-  computed: mapState({ events: (state) => state.events.events }),
 }
 </script>
 <style scoped>

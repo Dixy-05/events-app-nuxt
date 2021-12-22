@@ -8,8 +8,8 @@ div
 // section(class="section")
 //   div(class="columns is-mobile")
 
-import { mapState } from 'vuex'
 import EventCard from '~/components/eventCard'
+import { mapState } from 'vuex'
 
 export default {
   name: 'IndexPage',

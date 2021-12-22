@@ -13,10 +13,5 @@ export default {
   // components: {
   //   VueTrix,
   // },
-  data() {
-    return {
-      editorContent: String,
-    }
-  },
 }
 </script>

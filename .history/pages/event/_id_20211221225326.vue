@@ -6,7 +6,7 @@
     p.data {{event.date}} @ {{event.time}}
     p.describe Place
     p.data {{event.location}}
-    p.ft Organized by 
+    p.data Organized by 
       b {{event.organizer}}
 </template>
 <script>
@@ -42,7 +42,6 @@ h1 {
   color: rgb(67, 174, 201);
   font-size: 2.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 .describe {
   font-weight: bold;
@@ -54,8 +53,5 @@ h4 {
 }
 .data {
   font-size: 1.1em;
-}
-.ft {
-  margin-top: 1em;
 }
 </style>

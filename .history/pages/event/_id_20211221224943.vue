@@ -3,11 +3,10 @@
     h1 {{event.title}}
     h4 {{event.description}}
     p.describe Date
-    p.data {{event.date}} @ {{event.time}}
+    p.timeDate {{event.date}} @ {{event.time}}
     p.describe Place
-    p.data {{event.location}}
-    p.ft Organized by 
-      b {{event.organizer}}
+    p.timeDate {{event.location}}
+    p.describe Organized by
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -42,7 +41,6 @@ h1 {
   color: rgb(67, 174, 201);
   font-size: 2.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 .describe {
   font-weight: bold;
@@ -52,10 +50,7 @@ h4 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
 }
-.data {
+.timeDate {
   font-size: 1.1em;
-}
-.ft {
-  margin-top: 1em;
 }
 </style>

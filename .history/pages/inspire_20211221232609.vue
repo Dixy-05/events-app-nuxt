@@ -7,16 +7,7 @@
 </template>
 
 <script>
-// import VueTrix from 'vue-trix'
 export default {
   name: 'InspirePage',
-  // components: {
-  //   VueTrix,
-  // },
-  data() {
-    return {
-      editorContent: String,
-    }
-  },
 }
 </script>

@@ -1,13 +1,10 @@
 <template lang="pug">
   div.details
     h1 {{event.title}}
+    h2 Category: {{event.category}}
     h4 {{event.description}}
-    p.describe Date
-    p.data {{event.date}} @ {{event.time}}
-    p.describe Place
-    p.data {{event.location}}
-    p.ft Organized by 
-      b {{event.organizer}}
+    p {{event.date}} @ {{event.time}}
+    h3 Place: {{event.location}}
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -34,28 +31,8 @@ export default {
 }
 </script>
 <style scoped>
-.details {
-  text-align: center;
-  margin-top: 5em;
-}
 h1 {
-  color: rgb(67, 174, 201);
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-.describe {
-  font-weight: bold;
-}
-h4 {
-  font-size: 1.2em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-}
-.data {
-  font-size: 1.1em;
-}
-.ft {
-  margin-top: 1em;
+  text-align: center;
+  font-size: 2em;
 }
 </style>
