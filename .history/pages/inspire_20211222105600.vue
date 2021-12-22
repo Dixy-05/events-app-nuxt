@@ -4,7 +4,7 @@
       b-icon(icon="rocket" size="is-large")
       |"
     h3(class="subtitle is-6 has-text-grey")
-    VueTrix(v-model="editorContent" placeholder="Enter your content...")
+    VueTrix(v-model="editorContent" placeholder="enter your content...")
 </template>
 
 <script>

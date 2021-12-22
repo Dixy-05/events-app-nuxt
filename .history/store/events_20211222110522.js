@@ -12,7 +12,7 @@ export const mutations = {
   },
 }
 export const actions = {
-  async fetchEvents({ commit }, { perPage, page }) {
+  async fetchEvents({ commit }) {
     const response = await EventService.getEvents(3, 1)
     return commit('SET_EVENTS', response.data)
   },
