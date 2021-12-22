@@ -9,10 +9,11 @@
 </template>
 
 <script>
+import VueTrix from 'vue-trix'
 export default {
   name: 'InspirePage',
   components: {
-    VueTrix: () => import('vue-trix'),
+    VueTrix,
   },
   data() {
     return {

@@ -4,15 +4,15 @@
       b-icon(icon="rocket" size="is-large")
       |"
     h3(class="subtitle is-6 has-text-grey")
-    client-only
-      VueTrix(v-model="editorContent" placeholder="Enter your content...")
+    VueTrix(v-model="editorContent" placeholder="Enter your content...")
 </template>
 
 <script>
+import VueTrix from 'vue-trix'
 export default {
   name: 'InspirePage',
   components: {
-    VueTrix: () => import('vue-trix'),
+    VueTrix,
   },
   data() {
     return {

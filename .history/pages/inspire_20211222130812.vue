@@ -12,7 +12,7 @@
 export default {
   name: 'InspirePage',
   components: {
-    VueTrix: () => import('vue-trix'),
+    VueTrix: () => require('vue-trix'),
   },
   data() {
     return {
