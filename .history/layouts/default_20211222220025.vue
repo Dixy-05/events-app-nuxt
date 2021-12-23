@@ -43,11 +43,6 @@ export default {
     return {
       items: [
         {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' },
-        },
-        {
           title: 'Events',
           icon: 'text-box-check',
           to: { name: 'events' },

@@ -6,7 +6,7 @@
     h3(class="subtitle is-6 has-text-grey")
     client-only
       VueTrix(v-model="editorContent" placeholder="Enter your content...")
-    b-icon(icon="text-box-check")
+    b-icon(icon="account")
 </template>
 
 <script>

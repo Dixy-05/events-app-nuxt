@@ -30,15 +30,10 @@ div {
 }
 h1 {
   font-size: 2em;
-  font-weight: 600;
-  color: coral;
 }
 h2 {
   margin-top: 1em;
   font-size: 1.5em;
-  font-weight: 500;
-
-  color: coral;
 }
 p {
   font-size: 1.2em;

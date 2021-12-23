@@ -7,7 +7,7 @@
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <span class="logo">Go Help</span>
+          <span class="logo">My Events</span>
         </a>
 
         <div class="navbar-burger">
@@ -43,14 +43,9 @@ export default {
     return {
       items: [
         {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' },
-        },
-        {
           title: 'Events',
           icon: 'text-box-check',
-          to: { name: 'events' },
+          to: { name: 'index' },
         },
         {
           title: 'Inspire',

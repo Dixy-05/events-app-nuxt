@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div.main
   h1 Looking how to help others?
   p We have a list of events that you might be interested in.
   p Take a look at our events, and sign in for one or more
@@ -25,20 +25,14 @@ export default {
 </script>
 <style scoped>
 div {
-  margin-top: 3em;
   text-align: center;
 }
 h1 {
   font-size: 2em;
-  font-weight: 600;
-  color: coral;
 }
 h2 {
-  margin-top: 1em;
+  margin-top:
   font-size: 1.5em;
-  font-weight: 500;
-
-  color: coral;
 }
 p {
   font-size: 1.2em;

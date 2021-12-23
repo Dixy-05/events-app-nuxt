@@ -6,12 +6,8 @@ div
   p 
     b-icon(icon="bullhorn")
     |For free !!
-  h2 Got new ideas for events?
-  p 
-    b Inspire 
-    |us with your new ideas
-  p and we will do our best to make them real
-  b-icon(icon="creation")
+
+  b-icon(icon="account")
  
 </template>
 
@@ -24,23 +20,7 @@ export default {
 }
 </script>
 <style scoped>
-div {
-  margin-top: 3em;
-  text-align: center;
-}
 h1 {
   font-size: 2em;
-  font-weight: 600;
-  color: coral;
-}
-h2 {
-  margin-top: 1em;
-  font-size: 1.5em;
-  font-weight: 500;
-
-  color: coral;
-}
-p {
-  font-size: 1.2em;
 }
 </style>

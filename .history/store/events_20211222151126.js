@@ -12,9 +12,8 @@ export const mutations = {
   },
 }
 export const actions = {
-  async fetchEvents({ commit }, payload) {
-    const response = await EventService.getEvents(payload.perPage, payload.page)
-    console.log(payload)
+  async fetchEvents({ commit }, { perPage, page }) {
+    const response = await EventService.getEvents(perPage, page)
     console.log(response.headers['x-total-count'])
     return commit('SET_EVENTS', response.data)
   },
