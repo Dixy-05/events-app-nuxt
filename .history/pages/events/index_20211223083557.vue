@@ -3,8 +3,8 @@ div
 	h1 Events
 	EventCard(v-for="(event,index) in events" :key="index" :event="event" :data-index="index")
 	div.pagination   
-		nuxt-link(:to="{path:'/events',query:{page:page+1}}" ) next Pg &#10097;
-		nuxt-link(:to="{path:'/events',query:{page:page-1}}" v-if="page !=1") &#10096; prev Pg
+		nuxt-link(:to="{path:'/events',query:{page:page+1}}" ) next &#10097;
+		nuxt-link(:to="{path:'/events',query:{page:page-1}}" v-if="page !=1") &#10096; prev
 </template>
 
 <script>
