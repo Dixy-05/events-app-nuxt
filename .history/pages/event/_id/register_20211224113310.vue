@@ -1,9 +1,4 @@
 <template lang="pug">
-    nuxt-link(:to="{path:`event/${}`}" ) Details
-      span.Vbar |
-    nuxt-link(:to="{path:`${event.id}/edit`}" ) Edit
-
-
 	div.container
 		h1 Register to 
 			b "{{event.title}}"
@@ -72,8 +67,5 @@ h1 {
 .container {
   padding-right: 4em;
   padding-left: 2em;
-}
-.field {
-  margin-bottom: 0.5em;
 }
 </style>

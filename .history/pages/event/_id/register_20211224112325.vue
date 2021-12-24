@@ -1,23 +1,18 @@
 <template lang="pug">
-    nuxt-link(:to="{path:`event/${}`}" ) Details
-      span.Vbar |
-    nuxt-link(:to="{path:`${event.id}/edit`}" ) Edit
-
-
 	div.container
 		h1 Register to 
 			b "{{event.title}}"
 		div
-			section
-				form
-					ValidationObserver(ref="observer")
-						ValidationProvider.field(rules="required" name="First Name" v-slot="{errors,valid}")
+			ValidationObserver(ref="observer" v-slot="{ handleSubmit })
+				section
+					form
+						ValidationProvider(rules="required" name="First Name" v-slot="{errors,valid}")
 							b-field(label="First Name" :label-position="form.firstName!=''?'on-border':'inside'" :type="{'is-danger':errors[0],'is-success':valid}" :message="errors") 
 								b-input(placeholder="First Name" v-model="form.firstName" type='string' ) 
-						ValidationProvider.field(rules="required" name="Last Name" v-slot="{errors,valid}")
+						ValidationProvider(rules="required" name="Last Name" v-slot="{errors,valid}")
 							b-field(label="Last Name" :label-position="form.lastName!=''?'on-border':'inside'" :type="{'is-danger':errors[0],'is-success':valid}" :message="errors")
 								b-input(placeholder="Last Name" v-model="form.lastName" type='string')
-						ValidationProvider.field(rules="required|email" name="Last Name" v-slot="{errors,valid}")
+						ValidationProvider(rules="required|email" name="Last Name" v-slot="{errors,valid}")
 							b-field(label="Email" :label-position="form.email!=''?'on-border':'inside'" :type="{'is-danger':errors[0],'is-success':valid}" :message="errors" )
 								b-input(placeholder="Email" v-model="form.email" type='email' )
 						b-button(class="is-primary" @click="onSubmit") Register
@@ -72,8 +67,5 @@ h1 {
 .container {
   padding-right: 4em;
   padding-left: 2em;
-}
-.field {
-  margin-bottom: 0.5em;
 }
 </style>
