@@ -58,7 +58,7 @@
 
           b-field(label="Password")
             b-input(type="password" value="iwantmytreasure" password-reveal)
-        footer(class="modal-card-foot")
+        footer (class="modal-card-foot")
           button(class="button" @click="isShowModal = false") Cancel
 </template>
 

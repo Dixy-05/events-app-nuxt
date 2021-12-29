@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  <div>
     section
       b-navbar(class="is-primary")
         template(slot="brand")
@@ -25,6 +25,7 @@
                   strong Sign up
                 a(class="button is-light" @click="isShowModal = true")
                   |Log in
+      //- first part.......................................................
     section(class="main-content columns")
       aside(class="column is-2 section")
         ul(class="menu-list")
@@ -33,33 +34,52 @@
               b-icon(:icon="item.icon") {{ item.title }}
       div(class="container column is-10")
         Nuxt 
-
-    //- <!-- Login Modal -->
-    div(class="modal" :class="{ 'is-active': isShowModal }")
-      div(class="modal-background" @click="isShowModal = false") 
-      div(class="modal-card")
-        header(class="modal-card-head")
-          p(class="modal-card-title") Login>
-          button(class="delete"
+        
+    <!-- Login Modal -->
+    <div class="modal" :class="{ 'is-active': isShowModal }">
+      <div class="modal-background" @click="isShowModal = false"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Login</p>
+          <button
+            class="delete"
             aria-label="close"
-            @click="isShowModal = false") 
-        section(class="modal-card-body")
+            @click="isShowModal = false"
+          ></button>
+        </header>
+        <section class="modal-card-body">
           Modal Content
-          b-field(label="Name")
-            b-input(v-model="name")
-       
+          <b-field label="Name">
+            <b-input v-model="name"></b-input>
+          </b-field>
 
-          b-field(label="Email" type="is-danger" message="This email is invalid")
-            b-input(type="email" value="john@" maxlength="30")
+          <b-field
+            label="Email"
+            type="is-danger"
+            message="This email is invalid"
+          >
+            <b-input type="email" value="john@" maxlength="30"> </b-input>
+          </b-field>
 
-          b-field(label="Username" type="is-success" message="This username is available")
-            b-input(value="johnsilver" maxlength="30")
-          
+          <b-field
+            label="Username"
+            type="is-success"
+            message="This username is available"
+          >
+            <b-input value="johnsilver" maxlength="30"></b-input>
+          </b-field>
 
-          b-field(label="Password")
-            b-input(type="password" value="iwantmytreasure" password-reveal)
-        footer(class="modal-card-foot")
-          button(class="button" @click="isShowModal = false") Cancel
+          <b-field label="Password">
+            <b-input type="password" value="iwantmytreasure" password-reveal>
+            </b-input>
+          </b-field>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button" @click="isShowModal = false">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

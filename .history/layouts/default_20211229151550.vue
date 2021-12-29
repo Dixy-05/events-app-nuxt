@@ -31,6 +31,7 @@
           li(v-for="(item, key) of items" :key="key")
             NuxtLink(:to="item.to" exact-active-class="is-active")
               b-icon(:icon="item.icon") {{ item.title }}
+
       div(class="container column is-10")
         Nuxt 
 
