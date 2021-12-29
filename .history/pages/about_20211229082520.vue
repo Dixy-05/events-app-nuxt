@@ -25,7 +25,7 @@
 						p.subtitle Schedule
 						div.content 
 							p Opening time at 
-								b {{info.open}}
+								b {{info}}
 							p Closing time at 
 								b {{info.close}}
 							p We are open from 
@@ -92,7 +92,7 @@ export default {
     }
   },
   computed: mapState({
-    info: (state) => state.events.info[0],
+    info: (state) => state.events.info,
     staff: (state) => state.events.staff,
     history: (state) => state.events.history,
     direction: (state) => state.events.direction,

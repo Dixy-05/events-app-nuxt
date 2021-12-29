@@ -28,12 +28,10 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
+                <a class="button is-primary" v-on:click="isShowModal = true">
                   <strong>Sign up</strong>
                 </a>
-                <a class="button is-light" v-on:click="isShowModal = true"
-                  >Log in</a
-                >
+                <a class="button is-light">Log in</a>
               </div>
             </div>
           </div>
@@ -60,40 +58,14 @@
       <div class="modal-background" v-on:click="isShowModal = false"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Login</p>
+          <p class="modal-card-title">Modal title</p>
           <button
             class="delete"
             aria-label="close"
             v-on:click="isShowModal = false"
           ></button>
         </header>
-        <section class="modal-card-body">
-          Modal Content
-          <b-field label="Name">
-            <b-input v-model="name"></b-input>
-          </b-field>
-
-          <b-field
-            label="Email"
-            type="is-danger"
-            message="This email is invalid"
-          >
-            <b-input type="email" value="john@" maxlength="30"> </b-input>
-          </b-field>
-
-          <b-field
-            label="Username"
-            type="is-success"
-            message="This username is available"
-          >
-            <b-input value="johnsilver" maxlength="30"></b-input>
-          </b-field>
-
-          <b-field label="Password">
-            <b-input type="password" value="iwantmytreasure" password-reveal>
-            </b-input>
-          </b-field>
-        </section>
+        <section class="modal-card-body">Modal Content</section>
         <footer class="modal-card-foot">
           <button class="button" v-on:click="isShowModal = false">
             Cancel
@@ -109,7 +81,6 @@ export default {
   name: 'DefaultLayout',
   data() {
     return {
-      name: '',
       isShowModal: false,
       items: [
         {
