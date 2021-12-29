@@ -98,9 +98,9 @@ export default {
     direction: (state) => state.events.direction,
   }),
   async mounted() {
-    await this.$store.dispatch('events/fetchStaff')
-    await this.$store.dispatch('events/fetchHistory')
-    await this.$store.dispatch('events/fetchDirection')
+    await store.dispatch('events/fetchStaff')
+    await store.dispatch('events/fetchHistory')
+    await store.dispatch('events/fetchDirection')
   },
   methods: {
     makeFalse() {

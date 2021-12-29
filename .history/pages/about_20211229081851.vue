@@ -91,17 +91,18 @@ export default {
       })
     }
   },
+ async  mounted(){
+      await store.dispatch('events/fetchStaff')
+      await store.dispatch('events/fetchHistory')
+      await store.dispatch('events/fetchDirection')
+
+ }
   computed: mapState({
     info: (state) => state.events.info,
     staff: (state) => state.events.staff,
     history: (state) => state.events.history,
     direction: (state) => state.events.direction,
   }),
-  async mounted() {
-    await this.$store.dispatch('events/fetchStaff')
-    await this.$store.dispatch('events/fetchHistory')
-    await this.$store.dispatch('events/fetchDirection')
-  },
   methods: {
     makeFalse() {
       this.about = {
