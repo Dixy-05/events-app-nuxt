@@ -23,6 +23,8 @@
                       strong Sign up
                     a(class="button is-light" @click="isShowModal = true")
                       |Log in
+
+
     div(class="tile")
       div(class="tile is-ancestor mt-3")
         div(class="tile is-parent is-vertical")

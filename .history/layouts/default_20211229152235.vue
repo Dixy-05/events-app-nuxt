@@ -8,6 +8,7 @@
         template(slot="start")
           div(class="navbar-start")
             a(class="navbar-item" href="/documentation") Documentation
+
             div(class="navbar-item has-dropdown is-hoverable")
               a(class="navbar-link") More
               div(class="navbar-dropdown")

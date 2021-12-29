@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    b-navbar(class="is-danger")
+    b-navbar(class="is-primary")
             template(slot="brand")
               a(class="navbar-item" href="/")
                 span(class="logo") Go Help
@@ -19,15 +19,17 @@
               div(class="navbar-end")
                 div(class="navbar-item")
                   div(class="buttons")
-                    a(class="button is-dark")
+                    a(class="button is-primary")
                       strong Sign up
                     a(class="button is-light" @click="isShowModal = true")
                       |Log in
+
+
     div(class="tile")
       div(class="tile is-ancestor mt-3")
         div(class="tile is-parent is-vertical")
           article(class="tile is-child notification is-success")
-            p(class="title") The is only for the administrators
+            p(class="title")>The is only for the administrators
           article(class="tile is-child notification is-warning")
             p(class="title") For editing all the information
         div(class="tile is-parent")

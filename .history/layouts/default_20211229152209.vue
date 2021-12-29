@@ -8,6 +8,7 @@
         template(slot="start")
           div(class="navbar-start")
             a(class="navbar-item" href="/documentation") Documentation
+
             div(class="navbar-item has-dropdown is-hoverable")
               a(class="navbar-link") More
               div(class="navbar-dropdown")
@@ -30,7 +31,7 @@
           li(v-for="(item, key) of items" :key="key")
             NuxtLink(:to="item.to" exact-active-class="is-active")
               b-icon(:icon="item.icon") 
-              span {{ item.title }}
+              {{ item.title }}
       div(class="container column is-10")
         Nuxt 
 
