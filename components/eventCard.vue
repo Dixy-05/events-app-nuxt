@@ -1,13 +1,10 @@
-<template>
-  <Nuxt-link :to="'/event/' + event.id">
-    <div class="-shadow">
-      <span class="eyebrow"> @{{ event.time }} on {{ parsedDate }} </span>
-      <h4 class="title">
-        {{ event.title }}
-      </h4>
-      <span>{{ event.organizer }} Organizer</span>
-    </div>
-  </Nuxt-link>
+<template lang="pug">
+  Nuxt-link(:to="'/event/' + event.id")
+    .-shadow
+      span.eyebrow  @{{ event.time }} on {{ parsedDate }} 
+      h4.title
+        | {{ event.title }}
+      span {{ event.organizer }} Organizer
 </template>
 <script>
 export default {
