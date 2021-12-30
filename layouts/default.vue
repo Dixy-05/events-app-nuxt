@@ -22,7 +22,7 @@
               div(class="buttons")
                 a(class="button is-primary")
                   strong Sign up
-                a(class="button is-light" @click="isShowModal = true")
+                a(class="button is-light" @click="cardModal")
                   |Log in
     section(class="main-content columns")
       aside(class="column is-2 section")
@@ -34,41 +34,35 @@
       div(class="container column is-10")
         Nuxt 
 
-    //- <!-- Login Modal -->
-    div(class="modal" :class="{ 'is-active': isShowModal }")
-      div(class="modal-background" @click="isShowModal = false") 
-      div(class="modal-card")
-        header(class="modal-card-head")
-          p(class="modal-card-title") Login>
-          button(class="delete"
-            aria-label="close"
-            @click="isShowModal = false") 
-        section(class="modal-card-body")
-          Modal Content
-          b-field(label="Name")
-            b-input(v-model="name")
-       
 
-          b-field(label="Email" type="is-danger" message="This email is invalid")
-            b-input(type="email" value="john@" maxlength="30")
 
-          b-field(label="Username" type="is-success" message="This username is available")
-            b-input(value="johnsilver" maxlength="30")
-          
-
-          b-field(label="Password")
-            b-input(type="password" value="iwantmytreasure" password-reveal)
-        footer(class="modal-card-foot")
-          button(class="button" @click="isShowModal = false") Cancel
 </template>
 
 <script>
+const ModalForm = {
+  props: ['email', 'password'],
+  template: `
+    form(action='')
+      .modal-card(style='width: auto')
+        header.modal-card-head
+          p.modal-card-title Login
+          button.delete(type='button' @click="$emit('close')")
+        section.modal-card-body
+          b-field(label='Email')
+            b-input(type='email' :value='email' placeholder='Your email' required)
+          b-field(label='Password')
+            b-input(type='password' :value='password' password-reveal='' placeholder='Your password' required='')
+          b-checkbox Remember me
+        footer.modal-card-foot
+          b-button(label='Close' @click="$emit('close')")
+            b-button(label='Login' type='is-primary')
+  `,
+}
 export default {
   name: 'DefaultLayout',
   data() {
     return {
       name: '',
-      isShowModal: false,
       items: [
         {
           title: 'Home',
@@ -87,6 +81,18 @@ export default {
         },
       ],
     }
+  },
+
+  methods: {
+    cardModal() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: ModalForm,
+        hasModalCard: true,
+        customClass: 'custom-class custom-class-2',
+        trapFocus: true,
+      })
+    },
   },
 }
 </script>
