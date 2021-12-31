@@ -8,13 +8,13 @@
           b-pagination-button(:page='props.page' :id='`page${props.page.number}`' tag='nuxt-link' :to='`/events?page=${props.page.number}`')
             | {{(props.page.number) }}
 
-        template(#previous='props')
-          b-pagination-button(:page='props.page' tag='nuxt-link' :to='`/events?page=${!props.page.disabled?props.page.number:$route.query.page}`' )
+        template(#previous='props' )
+          b-pagination-button(:page='props.page'  tag='nuxt-link' :to='`/events?page=${!props.page.disabled?props.page.number:$route.query.page}`' )
             b-icon(icon="chevron-left")
             span Prev
 
-        template(#next='props')
-          b-pagination-button(:page='props.page' tag='nuxt-link' :to='`/events?page=${!props.page.disabled?props.page.number:$route.query.page}`' )
+        template(#next='props' )
+          b-pagination-button(:page='props.page'  tag='nuxt-link' :to='`/events?page=${!props.page.disabled?props.page.number:$route.query.page}`' )
             span Next
             b-icon(icon="chevron-right")
 </template>
@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       current: +this.$route.query.page || 1,
+      // current: 1,
       rangeBefore: 2,
       rangeAfter: 1,
     }
@@ -65,6 +66,24 @@ export default {
     eventsPerPage: (state) => state.events.eventsPerPage,
   }),
   watchQuery: ['page'],
+  // async beforeUpdate() {
+  //   try {
+  //     await this.$store.dispatch('events/fetchEvents', {
+  //       perPage: 3,
+  //       page: this.$route.query.page,
+  //     })
+  //   } catch (error) {
+  //     return { error }
+  //   }
+  // },
+  // methods: {
+  //   toPage(num) {
+  //     console.log('anything')
+  //     // console.log('methods:', num)
+  //     this.current += 1
+  //     // this.$beforeUpdate()
+  //   },
+  // },
 }
 </script>
 <style scoped>

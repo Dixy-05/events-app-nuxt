@@ -1,42 +1,5 @@
 import EventService from '~/services/EventService.js'
-export const state = () => ({
-  events: [],
-  totalEvents: null,
-  eventsPerPage: null,
-  event: {},
-  eventNav: {
-    details: false,
-    edit: false,
-    register: false,
-  },
-  info: [],
-  staff: [],
-  history: [],
-  direction: [],
-})
-export const mutations = {
-  SET_EVENTS(state, events) {
-    state.events = events.data
-    state.totalEvents = events.total
-    state.eventsPerPage = events.perPage
-  },
-  SET_EVENT(state, event) {
-    state.event = event
-  },
-  SET_INFO(state, info) {
-    state.info = info
-  },
-  SET_STAFF(state, staff) {
-    state.staff = staff
-  },
-  SET_HISTORY(state, history) {
-    state.history = history
-  },
-  SET_DIRECTION(state, direction) {
-    state.direction = direction
-  },
-}
-export const actions = {
+export default {
   async fetchEvents({ commit }, payload) {
     const response = await EventService.getEvents(payload.perPage, payload.page)
     const totalCount = response.headers['x-total-count']
